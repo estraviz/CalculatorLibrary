@@ -18,9 +18,9 @@ class TestCalculator:
         assert 100 == calculator.multiply(10, 10)
 
     def test_division_ok(self):
-        assert 2.5 == calculator.divide(10, 2)
+        assert 2.5 == calculator.divide(5, 2)
 
     def test_division_by_zero(self):
         with pytest.raises(Exception) as excinfo:
             raise Exception('ERROR: Division by Zero')
-        assert excinfo.value.message == 'ERROR: Division by Zero'
+        assert str(excinfo.value) == 'ERROR: Division by Zero'
